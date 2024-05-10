@@ -15,6 +15,7 @@ import ProductCategoryDelete from "../../pages/admin/ProductCategoryDelete";
 import ProductCategoryCreate from "../../pages/admin/ProductCategoryCreate";
 import ProductCategoryEdit from "../../pages/admin/ProductCategoryEdit";
 import ProductCategoryDetail from "../../pages/admin/ProductCategoryDetail";
+import LayoutAdminDefault from "../../pages/admin/layout";
 
 export const routes = [
   {
@@ -23,7 +24,7 @@ export const routes = [
     children: [
       {
         path: "",
-        element: <LayoutDefault />,
+        element: <LayoutAdminDefault />,
         children: [
           {
             path: "dashboard",

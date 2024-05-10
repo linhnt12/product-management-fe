@@ -12,7 +12,7 @@ import avatar from "../../../images/avatar.jpg";
 
 const { Sider, Content } = Layout;
 
-function LayoutDefault() {
+function LayoutAdminDefault() {
   const [collapsed, setCollapsed] = useState(false);
 
   const token = getCookie("token");
@@ -70,4 +70,4 @@ function LayoutDefault() {
   )
 }
 
-export default LayoutDefault;
+export default LayoutAdminDefault;
