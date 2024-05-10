@@ -25,7 +25,7 @@ function Login() {
     const response = await login(options);
 
     if (response.code == 200) {
-      // setCookie("tokenUser", response.tokenUser, 1);
+      setCookie("tokenUser", response.tokenUser, 1);
       dispatch(checkLogin(true));
       navigate("/");
     } else {

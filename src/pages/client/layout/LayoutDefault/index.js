@@ -13,9 +13,6 @@ import { treeCategory } from "../../../../helpers/treeCategory";
 function LayoutDefault() {
   const tokenUser = getCookie("tokenUser");
   var isLogin = useSelector(state => state.loginReducer);
-  if (!tokenUser) {
-    isLogin = false;
-  }
 
   const [productsCategory, setProductsCategory] = useState([]);
   const [cart, setCart] = useState([]);
