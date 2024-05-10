@@ -4,6 +4,7 @@ import { login } from "../../../services/adminService";
 import "./LoginAdmin.scss";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
+import { setCookie } from "../../../helpers/cookie";
 
 
 function LoginAdmin() {
@@ -22,7 +23,8 @@ function LoginAdmin() {
     }
 
     const response = await login(options);
-    if (response.code === 200) {
+
+    if (response.code == 200) {
       dispatch(checkLogin(true));
       navigate("/admin/dashboard");
     } else {

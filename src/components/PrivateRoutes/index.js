@@ -4,11 +4,7 @@ import { getCookie } from "../../helpers/cookie";
 
 
 function PrivateRoutes() {
-  var isLogin = useSelector(state => state.loginReducer);
-  const tokenUser = getCookie("tokenUser");
-  if (tokenUser) {
-    isLogin = true;
-  }
+  const isLogin = useSelector(state => state.loginReducer);
   return (
     <>
       {isLogin ? (<Outlet />) : (<Navigate to="/login" />)}
