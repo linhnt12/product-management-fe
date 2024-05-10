@@ -1,0 +1,169 @@
+.products {
+  &__header {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__action {
+    height: 84px;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    th {
+      padding: 10px 0px;
+    }
+
+    tr td {
+      font-size: 14px;
+      padding: 5px 0px;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    th:nth-child(3) {
+      text-align: justify;
+    }
+
+    td:nth-child(3) {
+      text-align: justify;
+    }
+
+    tr {
+      border: 1px solid #ddd;
+    }
+
+  }
+
+  &__status {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+
+    &--active {
+      background-color: #F3FBF3;
+      padding: 3px 5px;
+      color: #1ABA75;
+      font-weight: 600;
+    }
+
+    &--inactive {
+      background-color: #FEF5F4;
+      padding: 5px 5px;
+      color: #F1352B;
+      font-weight: 600;
+    }
+  }
+}
+
+.button-action {
+  border: 1px solid #1ABA1A;
+  color: #1ABA1A;
+  font-weight: 600;
+  padding: 7px 10px;
+  margin-right: 10px;
+  border-radius: 3px;
+  transition: all .3s ease;
+  background-color: white;
+  cursor: pointer;
+
+  &--active {
+    background-color: #1ABA1A;
+    color: white;
+    border: 1px solid #1ABA1A;
+    font-weight: 600;
+    padding: 7px 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    transition: all .3s ease;
+  }
+}
+
+.button-action:hover {
+  background-color: #1ABA1A;
+  color: white;
+}
+
+.main__admin {
+  margin: 0px;
+}
+
+.filter-search {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  .search {
+    width: 40%;
+  }
+
+  .form-search {
+    width: 100%;
+    display: flex;
+
+    input {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px 10px;
+      border: 1px solid #ddd;
+      transition: all .3s;
+    }
+
+    input:focus {
+      border: 1px solid #1ABA1A;
+    }
+
+    button {
+      background-color: #1ABA1A;
+      border: 1px solid #1ABA1A;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .3s;
+      width: 39px;
+      height: 39px;
+    }
+
+    button:hover {
+      background-color: white;
+      color: #1ABA1A;
+    }
+  }
+}
+
+.sort-create {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .button-action {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    height: 35px;
+
+    p {
+      margin: 0px;
+    }
+  }
+}

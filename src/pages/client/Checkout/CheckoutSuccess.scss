@@ -1,0 +1,41 @@
+.order-success {
+  padding: 20px 30px;
+
+  &__noti {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__message {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  &__info-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.table-info {
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+
+  td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+}
