@@ -25,6 +25,7 @@ function LoginAdmin() {
     const response = await login(options);
 
     if (response.code == 200) {
+      setCookie("token", response.token, 1);
       dispatch(checkLogin(true));
       navigate("/admin/dashboard");
     } else {
