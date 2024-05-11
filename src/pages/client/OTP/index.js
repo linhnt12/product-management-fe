@@ -4,6 +4,7 @@ import { otpVerify } from "../../../services/usersService";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
+import Swal from 'sweetalert2';
 
 function OTP() {
   const navigate = useNavigate();
@@ -30,7 +31,11 @@ function OTP() {
       dispatch(checkLogin(true));
       navigate("/user/password/reset");
     } else {
-      alert(response.message);
+      Swal.fire({
+        icon: "error",
+        title: "Lỗi",
+        text: response.message
+      });
     }
   }
 

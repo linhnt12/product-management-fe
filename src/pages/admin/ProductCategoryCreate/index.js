@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { treeCategory } from "../../../helpers/treeCategory";
 import { TreeSelect } from 'antd';
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 function ProductCategoryCreate() {
   const navigate = useNavigate();
@@ -65,7 +66,13 @@ function ProductCategoryCreate() {
     }
 
     const response = await createProductsCategory(token, options);
-    alert("Thêm danh mục sản phẩm thành công!");
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Thêm danh mục sản phẩm thành công!",
+      showConfirmButton: false,
+      timer: 1500
+    });
     navigate("/admin/products-category");
   }
   return (

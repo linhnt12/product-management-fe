@@ -15,7 +15,6 @@ function ProductDelete() {
       const response = await deleteProduct(token, id);
     }
     fetchApi();
-    alert("Xoá sản phẩm thành công!");
     navigate("/admin/products");
   }, [])
 

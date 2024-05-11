@@ -49,11 +49,11 @@ function Cart() {
                 </div>
                 <div className='order__list'>
                   <div className='order__list__title'>Phí giao hàng:</div>
-                  <div className='order__list__value'>{totalQuantity ? <b>30.000₫</b> : <b>0₫</b>}</div>
+                  <div className='order__list__value'>{totalQuantity ? <b>{(parseInt(30000)).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</b> : <b>0₫</b>}</div>
                 </div>
                 <div className='order__totalPrice'>
                   <div className='order__totalPrice__title'><b>Tổng thanh toán:</b></div>
-                  <div className='order__totalPrice__value'><b>{totalQuantity ? (totalPrice + 30000) : 0}₫ </b></div>
+                  <div className='order__totalPrice__value'><b>{totalQuantity ? ((parseInt(totalPrice + 30000)).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})) : 0} </b></div>
                 </div>
                 <div className='button-out'>
                   <a href="/checkout">

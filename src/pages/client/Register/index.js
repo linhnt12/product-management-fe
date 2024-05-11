@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { setCookie } from "../../../helpers/cookie";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
-
+import Swal from 'sweetalert2';
 
 function Register() {
   const navigate = useNavigate();
@@ -29,13 +29,30 @@ function Register() {
       const response = await register(options);
 
       if (response.code == 200) {
-        alert("Đăng ký thành công!");
-        navigate("/login");
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Đăng ký thành công!",
+          showConfirmButton: true,
+          timer: 1500
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/login");
+          }
+        });
       } else {
-        alert(response.message);
+        Swal.fire({
+          icon: "error",
+          title: "Lỗi",
+          text: response.message
+        });
       }
     } else {
-      alert("Xác nhận mật khẩu không khớp!");
+      Swal.fire({
+        icon: "error",
+        title: "Lỗi",
+        text: "Xác nhận mật khẩu không khớp!"
+      });
     }
   }
 

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { setCookie } from "../../../helpers/cookie";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
+import Swal from 'sweetalert2';
 
 function Login() {
   const navigate = useNavigate();
@@ -29,7 +30,11 @@ function Login() {
       dispatch(checkLogin(true));
       navigate("/");
     } else {
-      alert("Sai tài khoản hoặc mật khẩu!");
+      Swal.fire({
+        icon: "error",
+        title: "Lỗi",
+        text: "Sai tài khoản hoặc mật khẩu!"
+      });
     }
 
   }

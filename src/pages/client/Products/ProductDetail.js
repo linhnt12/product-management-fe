@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import { useEffect, useState } from "react";
 import { addToCart, getProductDetail } from '../../../services/productsService';
 import "./ProductDetail.scss";
+import Swal from 'sweetalert2';
 
 function ProductDetail() {
   const params = useParams();
@@ -25,6 +26,7 @@ function ProductDetail() {
     e.preventDefault();
     const quantity = e.target[0].value;
     const id = product._id;
+    const slug = product.slug;
 
     const options = {
       quantity: quantity
@@ -32,8 +34,17 @@ function ProductDetail() {
 
     const fetchApi = async () => {
       const response = await addToCart(id, options);
-      alert("Đã thêm sản phẩm vào giỏ hàng!");
-      navigate(0);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Đã thêm sản phẩm vào giỏ hàng!",
+        showConfirmButton: true,
+        timer: 1500
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate(0);
+        }
+      });
     }
     fetchApi();
   }

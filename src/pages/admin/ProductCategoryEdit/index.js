@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { treeCategory } from "../../../helpers/treeCategory";
 import { TreeSelect } from 'antd';
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 function ProductCategoryEdit() {
   const navigate = useNavigate();
@@ -88,7 +89,13 @@ function ProductCategoryEdit() {
     }
 
     const response = await editProductsCategory(token, id, options);
-    alert(response.message);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: response.message,
+      showConfirmButton: false,
+      timer: 1500
+    });
     navigate(`/admin/products-category/edit/${id}`);
   }
 

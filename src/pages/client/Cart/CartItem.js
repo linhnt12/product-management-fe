@@ -76,7 +76,7 @@ function CartItem(props) {
               {item.title}
             </div>
             <div className="cart-item__price-new">
-              {(item.price * (100 - item.discountPercentage) / 100).toFixed()}₫
+            {(parseInt((item.price * (100 - item.discountPercentage) / 100).toFixed())).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}
             </div>
             <div className="cart-item__quantity">
               <span className="minus" onClick={handleMinus}>-</span>

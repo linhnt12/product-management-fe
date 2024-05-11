@@ -6,6 +6,7 @@ import { treeCategory } from "../../../helpers/treeCategory";
 import { TreeSelect } from 'antd';
 import { treeSelect } from "../../../helpers/treeSelect";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 function ProductCreate() {
   const navigate = useNavigate();
@@ -60,7 +61,13 @@ function ProductCreate() {
     }
 
     const response = await createProduct(token, options);
-    alert(response.message);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: response.message,
+      showConfirmButton: false,
+      timer: 1500
+    });
     navigate("/admin/products");
   }
 

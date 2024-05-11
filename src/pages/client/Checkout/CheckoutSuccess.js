@@ -86,11 +86,11 @@ function CheckoutSucess() {
                 ))}
                 <div className="checkout__cart__fee">
                   <div className="title">Phí vận chuyển:</div>
-                  <div className="value" style={{ color: "#f1352b" }}><b>+ 30.000₫</b></div>
+                  <div className="value" style={{ color: "#f1352b" }}><b>+ {(parseInt(30000)).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</b></div>
                 </div>
                 <div className="checkout__cart__fee">
                   <div className="total-title"><b>Tổng đơn hàng</b></div>
-                  <div className="total-value"><b>{totalPrice + 30000}₫</b></div>
+                  <div className="total-value"><b>{((parseInt(totalPrice + 30000)).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}))}</b></div>
                 </div>
               </div>
             </Col>

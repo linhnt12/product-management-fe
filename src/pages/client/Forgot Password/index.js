@@ -2,6 +2,7 @@ import loginImg from "../../../images/loginImg.png";
 import { Col, Row } from 'antd';
 import "./ForgotPassword.scss";
 import { forgotPassword } from "../../../services/usersService";
+import Swal from 'sweetalert2';
 
 function ForgotPassword() {
   const handleSubmit = async (e) => {
@@ -17,7 +18,11 @@ function ForgotPassword() {
     if (response.code === 200) {
       window.location.href = `/password/otp?email=${email}`;
     } else {
-      alert(response.message);
+      Swal.fire({
+        icon: "error",
+        title: "Lỗi",
+        text: response.message
+      });
     }
   }
   return (

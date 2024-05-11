@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from "react";
 import { getProducts } from "../../../services/adminService";
 import "./Products.scss";
 import { LeftOutlined, RightOutlined, SearchOutlined, PlusCircleOutlined } from '@ant-design/icons';
+import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 function Products() {
   const token = getCookie("token");
@@ -11,6 +13,7 @@ function Products() {
   const currentPage = useRef(1);
   const options = useRef({});
   const status = useRef("");
+  const navigate = useNavigate();
 
   // Products
   useEffect(() => {
@@ -133,6 +136,29 @@ function Products() {
   }
   // End Search
 
+  const handleDelete = (item) => {
+    const id = item._id;
+
+    Swal.fire({
+      title: "Bạn chắc chắn muốn xoá sản phẩm này?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Đồng ý",
+      cancelButtonText: "Huỷ",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate(`/admin/products/delete/${id}`);
+        Swal.fire({
+          title: "Xoá thành công!",
+          text: "Sản phẩm đã bị xoá!",
+          icon: "success"
+        });
+      }
+    });
+  }
+
   return (
     <>
       <div className="main main__admin products">
@@ -197,7 +223,7 @@ function Products() {
                   <img src={item.thumbnail} alt={item.title} style={{ width: "auto", height: "80px" }} />
                 </td>
                 <td>{item.title}</td>
-                <td>{(item.price).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</td>
+                <td>{(item.price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</td>
                 <td>{item.position} </td>
                 <td>
                   <div className={"products__status"}>
@@ -211,7 +237,7 @@ function Products() {
                 <td className="products__action">
                   <a href={`/admin/products/detail/${item._id}`} className="button-action">Chi tiết</a>
                   <a href={`/admin/products/edit/${item._id}`} className="button-action">Sửa</a>
-                  <a href={`/admin/products/delete/${item._id}`} className="button-action">Xoá</a>
+                  <button onClick={() => handleDelete(item)} className="button-action">Xoá</button>
                 </td>
               </tr>
             ))}

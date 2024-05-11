@@ -5,7 +5,7 @@ import "./LoginAdmin.scss";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
 import { setCookie } from "../../../helpers/cookie";
-
+import Swal from 'sweetalert2';
 
 function LoginAdmin() {
   const navigate = useNavigate();
@@ -29,7 +29,11 @@ function LoginAdmin() {
       dispatch(checkLogin(true));
       navigate("/admin/dashboard");
     } else {
-      alert("Sai tài khoản hoặc mật khẩu!");
+      Swal.fire({
+        icon: "error",
+        title: "Lỗi",
+        text: "Sai tài khoản hoặc mật khẩu!"
+      });
     }
   }
   return (

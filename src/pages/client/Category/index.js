@@ -6,6 +6,7 @@ import ProductItem from "../Products/ProductItem";
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { treeCategory } from '../../../helpers/treeCategory';
 import "./Category.scss";
+import { formatTitle } from '../../../helpers/formatTitle';
 
 function Category() {
   const params = useParams();
@@ -115,16 +116,20 @@ function Category() {
   return (
     <>
       <div className="products main">
-        <b className='product__title'>Hãng</b>
-        <div className='products__brand'>
-          {(subCategory.current)?.map(item => (
-            <div className='products__brand__item'>
-              <a href={`/${item.slug}`}>{(item.title).split(" ").pop()}</a>
+        {subCategory.current.length > 0 ?
+          <>
+            <b className='product__title'>Hãng</b>
+            <div className='products__brand'>
+              {(subCategory.current)?.map(item => (
+                <div className='products__brand__item'>
+                  <a href={`/${item.slug}`}>{(item.title).split(" ").pop()}</a>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+          : <></>}
         <div className='products__header'>
-          <b>{totalProducts} {(category.title)?.toLowerCase()}</b>
+          <b>{totalProducts + " " + (category.title ? formatTitle(category.title) : "")} { }</b>
           <div className="sort">
             <select className="select-sort" defaultValue={""} onChange={handleChange}>
               <option value={""}>Mới nhất</option>

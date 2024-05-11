@@ -3,6 +3,8 @@ import { getCookie } from "../../../helpers/cookie";
 import { useEffect, useState, useRef } from "react";
 import { LeftOutlined, RightOutlined, SearchOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { treeCategory } from "../../../helpers/treeCategory";
+import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 function ProductsCategory() {
   const token = getCookie("token");
@@ -11,6 +13,7 @@ function ProductsCategory() {
   const currentPage = useRef(1);
   const options = useRef({});
   const status = useRef("");
+  const navigate = useNavigate();
 
   // Products Category
   useEffect(() => {
@@ -146,6 +149,30 @@ function ProductsCategory() {
     })
   })
 
+  const handleDelete = (item) => {
+    const id = item._id;
+
+    Swal.fire({
+      title: "Bạn chắc chắn muốn xoá danh mục này?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Đồng ý",
+      cancelButtonText: "Huỷ",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate(`/admin/products-category/delete/${id}`);
+        Swal.fire({
+          title: "Xoá thành công!",
+          text: "Danh mục đã bị xoá!",
+          icon: "success"
+        });
+      }
+    });
+  }
+
+
   return (
     <>
       <div className="main main__admin products-category">
@@ -214,7 +241,7 @@ function ProductsCategory() {
                 <td className="products__action">
                   <a href={`/admin/products-category/detail/${item._id}`} className="button-action">Chi tiết</a>
                   <a href={`/admin/products-category/edit/${item._id}`} className="button-action">Sửa</a>
-                  <a href={`/admin/products-category/delete/${item._id}`} className="button-action">Xoá</a>
+                  <button onClick={() => handleDelete(item)} className="button-action">Xoá</button>
                 </td>
               </tr>
             )) : productsCategory.map((item, index) => (
@@ -237,7 +264,7 @@ function ProductsCategory() {
                 <td className="products__action">
                   <a href={`/admin/products-category/detail/${item._id}`} className="button-action">Chi tiết</a>
                   <a href={`/admin/products-category/edit/${item._id}`} className="button-action">Sửa</a>
-                  <a href={`/admin/products-category/delete/${item._id}`} className="button-action">Xoá</a>
+                  <button onClick={() => handleDelete(item)} className="button-action">Xoá</button>
                 </td>
               </tr>
             ))}

@@ -5,6 +5,7 @@ import { resetPassword } from "../../../services/usersService";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
 import { useCookies } from 'react-cookie';
+import Swal from 'sweetalert2';
 
 function ResetPassword() {
   const dispatch = useDispatch();
@@ -17,7 +18,11 @@ function ResetPassword() {
     const confirmPassword = e.target[1].value;
 
     if (password != confirmPassword) {
-      alert("Xác nhận mật khẩu không khớp!");
+      Swal.fire({
+        icon: "error",
+        title: "Lỗi",
+        text: "Xác nhận mật khẩu không khớp!"
+      });
       return;
     }
 
@@ -29,17 +34,21 @@ function ResetPassword() {
     const response = await resetPassword(options);
 
     if (response.code === 200) {
-      removeCookie('tokenUser',{path:'/'});
+      removeCookie('tokenUser', { path: '/' });
       dispatch(checkLogin(false));
       window.location.href = "/login";
     } else {
-      alert (response.message);
+      Swal.fire({
+        icon: "error",
+        title: "Lỗi",
+        text: response.message
+      });
     }
   }
 
   return (
     <>
-    <div className="login-area main">
+      <div className="login-area main">
         <Row>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>
             <div className="login-image">
@@ -54,11 +63,11 @@ function ResetPassword() {
                 </div>
                 <label>Mật khẩu</label>
                 <div>
-                  <input id="password" name="password" type="password" placeholder="Nhập mật khẩu mới" required/>
+                  <input id="password" name="password" type="password" placeholder="Nhập mật khẩu mới" required />
                 </div>
                 <label>Xác nhận mật khẩu</label>
                 <div>
-                  <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Xác nhận mật khẩu" required/>
+                  <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Xác nhận mật khẩu" required />
                 </div>
                 <button type="submit">Xác nhận</button>
               </form>

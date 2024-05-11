@@ -5,6 +5,7 @@ import { treeCategory } from "../../../helpers/treeCategory";
 import { TreeSelect } from 'antd';
 import { treeSelect } from "../../../helpers/treeSelect";
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 function ProductEdit() {
   const navigate = useNavigate();
@@ -82,7 +83,13 @@ function ProductEdit() {
     }
 
     const response = await editProduct (token, id, options);
-    alert(response.message);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: response.message,
+      showConfirmButton: false,
+      timer: 1500
+    });
     navigate(`/admin/products/edit/${id}`);
   }
 
