@@ -92,6 +92,10 @@
     width: 100%;
     margin-bottom: 30px;
 
+    .form-addCart {
+      display: flex;
+    }
+
     input {
       border: 0;
       font-size: 17px;
@@ -119,6 +123,7 @@
 
   &__content {
     font-weight: 400;
+    text-align: justify;
   }
 }
 

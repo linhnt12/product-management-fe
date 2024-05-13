@@ -35,23 +35,26 @@ function ProductDetail() {
                 <div className="product-admin__content">
                   <b>Giá:</b> {product.price}đ
                 </div>
-                <div className="product__content">
+                <div className="product-admin__content">
                   <b>Giảm giá:</b> {product.discountPercentage}%
                 </div>
-                <div className="product__content">
+                <div className="product-admin__content">
                   <b>Còn lại:</b> {product.stock} sản phẩm
                 </div>
-                <div className="product__content__status">
-                  <b>Trạng thái:</b> {product.status === "active" ?
+                <div className="product-admin__content__status">
+                  <div className="product-admin__content__title">
+                    <b>Trạng thái:</b>
+                    </div> 
+                    {product.status === "active" ?
                     <div className="products__status--active">Hoạt động</div>
                     :
                     <div className="products__status--inactive">Dừng hoạt động</div>
                   }
                 </div>
-                <div className="product__content">
+                <div className="product-admin__content">
                   <b>Vị trí:</b> {product.position}
                 </div>
-                <div className="product__content" >
+                <div className="product-admin__content" >
                   <b>Mô tả:</b> {product.description}
                 </div>
               </Col>

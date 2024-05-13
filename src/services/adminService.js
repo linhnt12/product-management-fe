@@ -11,6 +11,16 @@ export const getDashboard = async (token) => {
   return result;
 }
 
+export const getMyAccount= async (token) => {
+  const result = await getToken("admin/my-account", token)
+  return result;
+}
+
+export const editMyAccount = async (token, options) => {
+  const result = await patchToken(`admin/my-account/edit`, token, options)
+  return result;
+}
+
 // Products
 export const getProducts = async (token, options) => {
   const query = toQuery(options);

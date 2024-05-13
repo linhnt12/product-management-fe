@@ -43,7 +43,7 @@ function LayoutAdminDefault() {
             </div>
 
             <div className="header__nav-left">
-              <NavLink to="/admin/my-account" style={{color: "black"}}>
+              <NavLink to="/admin/my-account" style={{ color: "black" }}>
                 <div className="account">
                   <div className="account__image">
                     <img src={avatar} />
@@ -58,7 +58,13 @@ function LayoutAdminDefault() {
           </div>
         </header>
         <Layout>
-          <Sider width="230" className="sider" collapsed={collapsed} theme="light">
+          <Sider width="230" style={{
+            overflow: "auto",
+            height: "100vh",
+            position: "sticky",
+            top: "56px",
+            left: 0
+          }} className="sider" collapsed={collapsed} theme="light">
             <MenuSider />
           </Sider>
           <Content className="content">

@@ -128,7 +128,7 @@ function Home() {
 
       <div className="products main">
         <div className="products__header">
-          <h2>TOÀN BỘ SẢN PHẨM</h2>
+          <h2 style={{fontSize: "21px"}}>TOÀN BỘ SẢN PHẨM</h2>
           <div className="sort">
             <select className="select-sort" defaultValue={""} onChange={handleChange}>
               <option value={""}>Mới nhất</option>

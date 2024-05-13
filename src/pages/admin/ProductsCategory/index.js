@@ -207,8 +207,6 @@ function ProductsCategory() {
         </div>
         </div>
 
-        
-
         <table className="products__table">
           <thead>
             <tr>
@@ -271,7 +269,7 @@ function ProductsCategory() {
           </tbody>
         </table>
 
-        <div className="pagination">
+        {/* <div className="pagination">
           <div className="pagination__prev" onClick={handlePrev}><LeftOutlined /></div>
           {(() => {
             const arr = [];
@@ -285,7 +283,7 @@ function ProductsCategory() {
             return arr;
           })()}
           <div className="pagination__next" onClick={handleNext}><RightOutlined /></div>
-        </div>
+        </div> */}
       </div>
     </>
   )

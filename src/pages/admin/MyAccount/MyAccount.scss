@@ -1,0 +1,13 @@
+.info {
+  &__avatar {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
