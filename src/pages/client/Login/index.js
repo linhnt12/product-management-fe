@@ -7,6 +7,7 @@ import { setCookie } from "../../../helpers/cookie";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function Login() {
   const navigate = useNavigate();
@@ -41,6 +42,9 @@ function Login() {
 
   return (
     <>
+      <Helmet>
+        <title>Đăng nhập</title>
+      </Helmet>
       <div className="login-area main">
         <Row>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>

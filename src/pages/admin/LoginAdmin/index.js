@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
 import { setCookie } from "../../../helpers/cookie";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function LoginAdmin() {
   const navigate = useNavigate();
@@ -38,6 +39,9 @@ function LoginAdmin() {
   }
   return (
     <>
+    <Helmet>
+        <title>Đăng nhập Admin</title>
+      </Helmet>
       <header className="header">
         <div className={"header__logo "}>
           <img src={logo} alt="Logo" />

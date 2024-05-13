@@ -6,6 +6,7 @@ import { TreeSelect } from 'antd';
 import { treeSelect } from "../../../helpers/treeSelect";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function ProductEdit() {
   const navigate = useNavigate();
@@ -82,7 +83,7 @@ function ProductEdit() {
       status: status
     }
 
-    const response = await editProduct (token, id, options);
+    const response = await editProduct(token, id, options);
     Swal.fire({
       position: "center",
       icon: "success",
@@ -95,6 +96,9 @@ function ProductEdit() {
 
   return (
     <>
+      <Helmet>
+        <title>{product.title}</title>
+      </Helmet>
       <div className="main main__admin create-product">
         <div className="products__header">
           <b>Chỉnh sửa sản phẩm</b>
@@ -137,7 +141,7 @@ function ProductEdit() {
           </div>
           <div className="form-group">
             <label>Ảnh</label>
-            <input type="text" name="thumbnail" id="thumbnail" accept="image/*"  defaultValue={product.thumbnail}/>
+            <input type="text" name="thumbnail" id="thumbnail" accept="image/*" defaultValue={product.thumbnail} />
           </div>
           <div className="form-group">
             <label>Vị trí</label>
@@ -148,16 +152,16 @@ function ProductEdit() {
             <div className="form-check-inline">
               <input type="radio" id="statusActive"
                 value="active"
-                checked={status=="active"}
-                onChange={handleStatus}/>
+                checked={status == "active"}
+                onChange={handleStatus} />
               <label>Hoạt động</label>
             </div>
             <div className="form-check-inline">
               <input type="radio" id="statusInActive"
                 value="inactive"
-                checked={status=="inactive"}
+                checked={status == "inactive"}
                 onChange={handleStatus}
-                 />
+              />
               <label>Dừng hoạt động</label>
             </div>
           </div>

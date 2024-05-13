@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import { getSearchResult } from "../../../services/productsService";
 import ProductItem from "../Products/ProductItem";
+import { Helmet } from 'react-helmet';
 
 function Search() {
   const search = window.location.search;
@@ -20,6 +21,9 @@ function Search() {
 
   return (
     <>
+      <Helmet>
+        <title>Kết quả tìm kiếm</title>
+      </Helmet>
       <div className="products main">
         <h2>{products.length} kết quả cho '{keyword}'</h2>
         <Row gutter={[20, 20]}>

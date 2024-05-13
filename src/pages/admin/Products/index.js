@@ -5,6 +5,7 @@ import "./Products.scss";
 import { LeftOutlined, RightOutlined, SearchOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 function Products() {
   const token = getCookie("token");
@@ -161,6 +162,9 @@ function Products() {
 
   return (
     <>
+      <Helmet>
+        <title>Danh sách sản phẩm</title>
+      </Helmet>
       <div className="main main__admin products">
         <div className="filter-search">
           <div className="filter">

@@ -5,6 +5,7 @@ import { LeftOutlined, RightOutlined, SearchOutlined, PlusCircleOutlined } from 
 import { treeCategory } from "../../../helpers/treeCategory";
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 function ProductsCategory() {
   const token = getCookie("token");
@@ -175,6 +176,9 @@ function ProductsCategory() {
 
   return (
     <>
+      <Helmet>
+        <title>Danh mục sản phẩm</title>
+      </Helmet>
       <div className="main main__admin products-category">
         <div className="filter-search">
           <div className="filter">
@@ -200,11 +204,11 @@ function ProductsCategory() {
         <div className="products__header">
           <b>Danh mục sản phẩm</b>
           <div className="sort-create">
-          <div className="create">
-            <a href="/admin/products-category/create" className="button-action"><PlusCircleOutlined />
-              <p>Thêm mới</p></a>
+            <div className="create">
+              <a href="/admin/products-category/create" className="button-action"><PlusCircleOutlined />
+                <p>Thêm mới</p></a>
+            </div>
           </div>
-        </div>
         </div>
 
         <table className="products__table">

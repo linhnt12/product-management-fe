@@ -4,6 +4,7 @@ import { getCookie } from "../../../helpers/cookie";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ProductDetailAdmin.scss";
+import { Helmet } from 'react-helmet';
 
 function ProductDetail() {
   const token = getCookie("token");
@@ -24,6 +25,9 @@ function ProductDetail() {
 
   return (
     <>
+      <Helmet>
+        <title>{product.title}</title>
+      </Helmet>
       {product ?
         <>
           <div className="main main__admin">
@@ -33,7 +37,7 @@ function ProductDetail() {
                   <b>{product.title}</b>
                 </div>
                 <div className="product-admin__content">
-                  <b>Giá:</b> {product.price}đ
+                  <b>Giá:</b> {(parseInt(product.price)).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}
                 </div>
                 <div className="product-admin__content">
                   <b>Giảm giá:</b> {product.discountPercentage}%
@@ -44,8 +48,8 @@ function ProductDetail() {
                 <div className="product-admin__content__status">
                   <div className="product-admin__content__title">
                     <b>Trạng thái:</b>
-                    </div> 
-                    {product.status === "active" ?
+                  </div>
+                  {product.status === "active" ?
                     <div className="products__status--active">Hoạt động</div>
                     :
                     <div className="products__status--inactive">Dừng hoạt động</div>

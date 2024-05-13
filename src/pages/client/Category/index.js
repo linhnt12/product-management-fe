@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { home, getCategory } from '../../../services/productsService';
 import { useEffect, useRef, useState } from "react";
 import { Row, Col } from "antd";
@@ -7,10 +7,12 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { treeCategory } from '../../../helpers/treeCategory';
 import "./Category.scss";
 import { formatTitle } from '../../../helpers/formatTitle';
+import { Helmet } from 'react-helmet';
 
 function Category() {
   const params = useParams();
   const slug = params.slugCategory;
+  const navigate = useNavigate();
 
   const [products, setProducts] = useState([]);
   const [productsCategory, setProductsCategory] = useState([]);
@@ -24,10 +26,16 @@ function Category() {
   useEffect(() => {
     const fetchApi = async () => {
       const response = await getCategory(slug);
-      setProducts(response.products);
-      setCategory(response.category);
-      setPagination(response.pagination);
-      setTotalProducts(response.countProducts);
+      if (response.code === 200) {
+        setProducts(response.products);
+        setCategory(response.category);
+        setPagination(response.pagination);
+        setTotalProducts(response.countProducts);
+      }
+      else {
+        navigate("/404");
+        return;
+      }
     }
     fetchApi();
   }, []);
@@ -115,6 +123,9 @@ function Category() {
 
   return (
     <>
+      <Helmet>
+        <title>{category.title}</title>
+      </Helmet>
       <div className="products main">
         {subCategory.current.length > 0 ?
           <>

@@ -5,8 +5,8 @@ import AdminRoutes from "./components/AdminRoutes";
 function App() {
   return (
     <>
-      <AdminRoutes/>
-      <ClientRoutes/>
+      {/* <AdminRoutes /> */}
+      <ClientRoutes />
     </>
   )
 }

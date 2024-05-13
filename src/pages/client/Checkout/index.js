@@ -3,6 +3,7 @@ import "./Checkout.scss";
 import { useEffect, useState } from "react";
 import { checkoutOrder, getCart } from '../../../services/productsService';
 import CheckoutItem from "./CheckoutItem";
+import { Helmet } from 'react-helmet';
 
 function Checkout() {
   const [products, setProducts] = useState([]);
@@ -51,6 +52,9 @@ function Checkout() {
 
   return (
     <>
+    <Helmet>
+        <title>Thanh toán</title>
+      </Helmet>
       <div className="main checkout">
         <div className="checkout__title"><b>THANH TOÁN</b></div>
         <Row>

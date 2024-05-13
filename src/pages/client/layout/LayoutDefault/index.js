@@ -14,6 +14,10 @@ function LayoutDefault() {
   const tokenUser = getCookie("tokenUser");
   var isLogin = useSelector(state => state.loginReducer);
 
+  const search = window.location.search;
+  const query = new URLSearchParams(search);
+  const keyword = query.get('keyword');
+
   const [productsCategory, setProductsCategory] = useState([]);
   const [cart, setCart] = useState([]);
   let totalQuantity = 0;
@@ -64,7 +68,7 @@ function LayoutDefault() {
               <form action="/search"
                 method="GET"
                 className="form-search">
-                <input type="text" name='keyword' placeholder="Bạn tìm gì..." />
+                <input defaultValue={keyword} type="text" name='keyword' placeholder="Bạn tìm gì..." />
                 <button type="submit">Tìm kiếm</button>
               </form>
 

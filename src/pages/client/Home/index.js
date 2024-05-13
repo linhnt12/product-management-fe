@@ -5,6 +5,7 @@ import ProductItem from "../Products/ProductItem";
 import CategoryItem from "..//Category/CategoryItem";
 import "./Home.scss";
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { Helmet } from 'react-helmet';
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -103,12 +104,15 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Trang chủ</title>
+      </Helmet>
       <div className="productsCategory main">
         <h2>DANH MỤC SẢN PHẨM</h2>
         <Row gutter={[20, 20]}>
           {productsCategory?.map(item => (
             (!item.parent_id ?
-              <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+              <Col xs={6} sm={6} md={6} lg={3} xl={3}>
                 <CategoryItem item={item} key={item._id} />
               </Col> : <></>)
           ))}
@@ -128,7 +132,7 @@ function Home() {
 
       <div className="products main">
         <div className="products__header">
-          <h2 style={{fontSize: "21px"}}>TOÀN BỘ SẢN PHẨM</h2>
+          <h2 style={{ fontSize: "21px" }}>TOÀN BỘ SẢN PHẨM</h2>
           <div className="sort">
             <select className="select-sort" defaultValue={""} onChange={handleChange}>
               <option value={""}>Mới nhất</option>

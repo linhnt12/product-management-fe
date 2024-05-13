@@ -4,6 +4,7 @@ import { getCart } from '../../../services/productsService';
 import CartItem from './CartItem';
 import "./Cart.scss";
 import { ShoppingCartOutlined } from '@ant-design/icons';
+import { Helmet } from 'react-helmet';
 
 function Cart() {
   const [products, setProducts] = useState([]);
@@ -32,6 +33,9 @@ function Cart() {
 
   return (
     <>
+    <Helmet>
+        <title>Giỏ hàng</title>
+      </Helmet>
       <div className="main cart">
         {products.length > 0 ?
           <Row>

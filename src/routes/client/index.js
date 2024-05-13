@@ -15,6 +15,22 @@ import CheckoutSucess from "../../pages/client/Checkout/CheckoutSuccess";
 import ForgotPassword from "../../pages/client/Forgot Password";
 import OTP from "../../pages/client/OTP";
 import ResetPassword from "../../pages/client/ResetPassword";
+import Page404 from "../../pages/client/Page 404";
+import PrivateAdminRoutes from "../../components/PrivateAdminRoutes";
+import LayoutAdminDefault from "../../pages/admin/layout";
+import Dashboard from "../../pages/admin/Dashboard";
+import Products from "../../pages/admin/Products";
+import ProductCreate from "../../pages/admin/ProductCreate";
+import ProductEdit from "../../pages/admin/ProductEdit";
+import ProductDelete from "../../pages/admin/ProductDelete";
+import ProductsCategory from "../../pages/admin/ProductsCategory";
+import ProductCategoryCreate from "../../pages/admin/ProductCategoryCreate";
+import ProductCategoryEdit from "../../pages/admin/ProductCategoryEdit";
+import ProductCategoryDetail from "../../pages/admin/ProductCategoryDetail";
+import ProductCategoryDelete from "../../pages/admin/ProductCategoryDelete";
+import LogoutAdmin from "../../pages/admin/LogoutAdmin";
+import MyAccount from "../../pages/admin/MyAccount";
+import LoginAdmin from "../../pages/admin/LoginAdmin";
 
 export const routes = [
   {
@@ -70,6 +86,14 @@ export const routes = [
         element: <OTP />
       },
       {
+        path: "*",
+        element: <Page404 />
+      },
+      {
+        path: "404",
+        element: <Page404 />
+      },
+      {
         path: "user",
         element: <PrivateRoutes />,
         children: [
@@ -84,5 +108,76 @@ export const routes = [
         ]
       }
     ]
+  },
+  {
+    path: "/admin",
+    element: <PrivateAdminRoutes />,
+    children: [
+      {
+        path: "",
+        element: <LayoutAdminDefault />,
+        children: [
+          {
+            path: "dashboard",
+            element: <Dashboard />
+          },
+          {
+            path: "products",
+            element: <Products />,
+          },
+          {
+            path: "products/create",
+            element: <ProductCreate />
+          },
+          {
+            path: "products/edit/:id",
+            element: <ProductEdit />
+          },
+          {
+            path: "products/detail/:id",
+            element: <ProductDetail />
+          },
+          {
+            path: "products/delete/:id",
+            element: <ProductDelete />
+          },
+          {
+            path: "products-category",
+            element: <ProductsCategory />
+          },
+          {
+            path: "products-category/create",
+            element: <ProductCategoryCreate />
+          },
+          {
+            path: "products-category/edit/:id",
+            element: <ProductCategoryEdit />
+          },
+          {
+            path: "products-category/detail/:id",
+            element: <ProductCategoryDetail />
+          },
+          {
+            path: "products-category/delete/:id",
+            element: <ProductCategoryDelete />
+          },
+          {
+            path: "logout",
+            element: <LogoutAdmin />
+          },
+          {
+            path: "my-account",
+            element: <MyAccount />
+          }
+        ]
+      },
+      {
+        
+      }
+    ]
+  },
+  {
+    path: "/admin/auth/login",
+    element: <LoginAdmin />
   }
 ]

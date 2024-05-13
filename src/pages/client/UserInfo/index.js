@@ -3,10 +3,11 @@ import { API_DOMAIN } from "../../../utils/request";
 import { getCookie } from "../../../helpers/cookie";
 import "./UserInfo.scss";
 import { useSelector } from "react-redux";
+import { Helmet } from 'react-helmet';
 
 function UserInfo() {
   const isLogin = useSelector(state => state.loginReducer);
-  
+
   const [info, setInfo] = useState([]);
   const tokenUser = getCookie("tokenUser");
 
@@ -24,6 +25,9 @@ function UserInfo() {
 
   return (
     <>
+      <Helmet>
+        <title>Thông tin tài khoản</title>
+      </Helmet>
       <div className="main info">
         <div className="info__title"><b>Thông tin tài khoản</b></div>
         <form className="form-info">

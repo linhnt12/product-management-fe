@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function OTP() {
   const navigate = useNavigate();
@@ -41,6 +42,9 @@ function OTP() {
 
   return (
     <>
+     <Helmet>
+        <title>Quên mật khẩu</title>
+      </Helmet>
       <div className="login-area main">
         <Row>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>

@@ -7,6 +7,7 @@ import { TreeSelect } from 'antd';
 import { treeSelect } from "../../../helpers/treeSelect";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function ProductCreate() {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ function ProductCreate() {
 
     if (e.target[8].checked == true) {
       status = "active";
-    } else if (e.target[9].checked == true){
+    } else if (e.target[9].checked == true) {
       status = "inactive"
     };
 
@@ -73,6 +74,9 @@ function ProductCreate() {
 
   return (
     <>
+      <Helmet>
+        <title>Thêm mới sản phẩm</title>
+      </Helmet>
       <div className="main main__admin create-product">
         <div className="products__header">
           <b>Thêm mới sản phẩm</b>
@@ -115,7 +119,7 @@ function ProductCreate() {
           </div>
           <div className="form-group">
             <label>Ảnh</label>
-            <input type="text" name="thumbnail" id="thumbnail" accept="image/*"/>
+            <input type="text" name="thumbnail" id="thumbnail" accept="image/*" />
           </div>
           <div className="form-group">
             <label>Vị trí</label>

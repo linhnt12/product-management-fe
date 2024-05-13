@@ -1,0 +1,27 @@
+.page-404 {
+  &__image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  &__redirect {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.button-back {
+  font-size: 15px;
+  background-color: #1ABA1A;
+  border: 1px solid #1ABA1A;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+.button-back:hover {
+  background-color: white;
+  color: #1ABA1A;
+}

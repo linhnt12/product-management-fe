@@ -16,6 +16,7 @@ import ProductCategoryCreate from "../../pages/admin/ProductCategoryCreate";
 import ProductCategoryEdit from "../../pages/admin/ProductCategoryEdit";
 import ProductCategoryDetail from "../../pages/admin/ProductCategoryDetail";
 import LayoutAdminDefault from "../../pages/admin/layout";
+import Page404 from "../../pages/client/Page 404";
 
 export const routes = [
   {
@@ -77,7 +78,15 @@ export const routes = [
           {
             path: "my-account",
             element: <MyAccount />
-          }
+          },
+          {
+            path: "*",
+            element: <Page404 />
+          },
+          {
+            path: "404",
+            element: <Page404 />
+          },
         ]
       }
     ]

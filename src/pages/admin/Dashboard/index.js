@@ -2,6 +2,7 @@ import { getCookie } from "../../../helpers/cookie";
 import { useEffect, useState } from "react";
 import { getDashboard } from "../../../services/adminService";
 import { Card, Col, Row } from "antd";
+import { Helmet } from 'react-helmet';
 
 function Dashboard() {
   const token = getCookie("token");
@@ -23,6 +24,9 @@ function Dashboard() {
 
   return (
     <>
+      <Helmet>
+        <title>Tổng quan</title>
+      </Helmet>
       <Row gutter={[20, 20]}>
         <Col span={12}>
           <Card title="Danh mục sản phẩm">

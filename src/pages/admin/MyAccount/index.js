@@ -5,6 +5,8 @@ import avatar from "../../../images/avatar.jpg";
 import "./MyAccount.scss";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router";
+import { Helmet } from 'react-helmet';
+
 
 function MyAccount() {
   const token = getCookie("token");
@@ -48,6 +50,9 @@ function MyAccount() {
 
   return (
     <>
+      <Helmet>
+        <title>Thông tin tài khoản</title>
+      </Helmet>
       <div className="main main__admin info">
         <div className="info__title"><b>Thông tin tài khoản</b></div>
         <div className="info__avatar">

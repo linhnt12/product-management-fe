@@ -3,6 +3,7 @@ import { Col, Row } from 'antd';
 import "./ForgotPassword.scss";
 import { forgotPassword } from "../../../services/usersService";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function ForgotPassword() {
   const handleSubmit = async (e) => {
@@ -12,7 +13,7 @@ function ForgotPassword() {
     const options = {
       email: email
     }
-    
+
     const response = await forgotPassword(options);
 
     if (response.code === 200) {
@@ -27,6 +28,9 @@ function ForgotPassword() {
   }
   return (
     <>
+      <Helmet>
+        <title>Quên mật khẩu</title>
+      </Helmet>
       <div className="login-area main">
         <Row>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>

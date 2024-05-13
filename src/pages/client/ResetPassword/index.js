@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import loginImg from "../../../images/loginImg.png";
 import { Col, Row } from 'antd';
 import { resetPassword } from "../../../services/usersService";
@@ -6,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { checkLogin } from "../../../actions/login";
 import { useCookies } from 'react-cookie';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
+
 
 function ResetPassword() {
   const dispatch = useDispatch();
@@ -48,6 +49,9 @@ function ResetPassword() {
 
   return (
     <>
+      <Helmet>
+        <title>Đặt lại mật khẩu</title>
+      </Helmet>
       <div className="login-area main">
         <Row>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { addToCart, getProductDetail } from '../../../services/productsService';
 import "./ProductDetail.scss";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function ProductDetail() {
   const params = useParams();
@@ -67,6 +68,9 @@ function ProductDetail() {
 
   return (
     <>
+     <Helmet>
+        <title>{product.title}</title>
+      </Helmet>
       {product ?
         <>
           <div className="product-detail main">

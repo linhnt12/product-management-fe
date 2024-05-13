@@ -3,6 +3,7 @@ import { detailProductsCategory } from "../../../services/adminService";
 import { getCookie } from "../../../helpers/cookie";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 function ProductCategoryDetail() {
   const token = getCookie("token");
@@ -24,6 +25,9 @@ function ProductCategoryDetail() {
 
   return (
     <>
+      <Helmet>
+        <title>{productCategory.title}</title>
+      </Helmet>
       {productCategory ?
         <>
           <div className="main main__admin">
@@ -32,17 +36,17 @@ function ProductCategoryDetail() {
                 <div className="products__header">
                   <b>{productCategory.title}</b>
                 </div>
-                <div className="product__content__status">
+                <div className="product-admin__content__status">
                   <b>Trạng thái:</b> {productCategory.status === "active" ?
                     <div className="products__status--active">Hoạt động</div>
                     :
                     <div className="products__status--inactive">Dừng hoạt động</div>
                   }
                 </div>
-                <div className="product__content">
+                <div className="product-admin__content">
                   <b>Vị trí:</b> {productCategory.position}
                 </div>
-                <div className="product__content" >
+                <div className="product-admin__content" >
                   <b>Mô tả:</b> {productCategory.description}
                 </div>
               </Col>

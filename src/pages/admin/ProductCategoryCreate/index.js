@@ -5,6 +5,7 @@ import { treeCategory } from "../../../helpers/treeCategory";
 import { TreeSelect } from 'antd';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 function ProductCategoryCreate() {
   const navigate = useNavigate();
@@ -77,6 +78,9 @@ function ProductCategoryCreate() {
   }
   return (
     <>
+      <Helmet>
+        <title>Thêm danh mục sản phẩm</title>
+      </Helmet>
       <div className="main main__admin create-product">
         <div className="products__header">
           <b>Thêm danh mục sản phẩm</b>
