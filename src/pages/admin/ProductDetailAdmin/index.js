@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import "./ProductDetailAdmin.scss";
 import { Helmet } from 'react-helmet';
 
-function ProductDetail() {
+function ProductDetailAdmin() {
   const token = getCookie("token");
   const params = useParams();
   const id = params.id;
@@ -37,7 +37,8 @@ function ProductDetail() {
                   <b>{product.title}</b>
                 </div>
                 <div className="product-admin__content">
-                  <b>Giá:</b> {(parseInt(product.price)).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}
+                  <b>Giá:</b> {
+                  (parseInt(product.price)).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}
                 </div>
                 <div className="product-admin__content">
                   <b>Giảm giá:</b> {product.discountPercentage}%
@@ -76,4 +77,4 @@ function ProductDetail() {
   )
 }
 
-export default ProductDetail;
+export default ProductDetailAdmin;

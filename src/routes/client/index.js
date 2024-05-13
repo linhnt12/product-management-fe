@@ -31,6 +31,7 @@ import ProductCategoryDelete from "../../pages/admin/ProductCategoryDelete";
 import LogoutAdmin from "../../pages/admin/LogoutAdmin";
 import MyAccount from "../../pages/admin/MyAccount";
 import LoginAdmin from "../../pages/admin/LoginAdmin";
+import ProductDetailAdmin from "../../pages/admin/ProductDetailAdmin";
 
 export const routes = [
   {
@@ -135,7 +136,7 @@ export const routes = [
           },
           {
             path: "products/detail/:id",
-            element: <ProductDetail />
+            element: <ProductDetailAdmin />
           },
           {
             path: "products/delete/:id",

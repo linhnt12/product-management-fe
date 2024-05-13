@@ -8,7 +8,7 @@ import PrivateAdminRoutes from "../../components/PrivateAdminRoutes";
 import LogoutAdmin from "../../pages/admin/LogoutAdmin";
 import ProductCreate from "../../pages/admin/ProductCreate";
 import ProductEdit from "../../pages/admin/ProductEdit";
-import ProductDetail from "../../pages/admin/ProductDetail";
+import ProductDetailAdmin from "../../pages/admin/ProductDetailAdmin";
 import ProductDelete from "../../pages/admin/ProductDelete";
 import MyAccount from "../../pages/admin/MyAccount";
 import ProductCategoryDelete from "../../pages/admin/ProductCategoryDelete";
@@ -45,7 +45,7 @@ export const routes = [
           },
           {
             path: "products/detail/:id",
-            element: <ProductDetail />
+            element: <ProductDetailAdmin />
           },
           {
             path: "products/delete/:id",
