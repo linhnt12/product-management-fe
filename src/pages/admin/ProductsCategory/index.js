@@ -219,6 +219,7 @@ function ProductsCategory() {
               <th>Tiêu đề</th>
               <th>Vị trí</th>
               <th>Trạng thái</th>
+              <th>Thời gian tạo</th>
               <th>Hành động</th>
             </tr>
           </thead>
@@ -239,6 +240,9 @@ function ProductsCategory() {
                       <div className="products__status--inactive">Dừng hoạt động</div>
                     }
                   </div>
+                </td>
+                <td>{new Date(item.createdAt)?.toLocaleString('en-GB').split(",")[0]}
+                {new Date(item.createdAt)?.toLocaleString('en-GB').split(",")[1]}
                 </td>
                 <td className="products__action">
                   <a href={`/admin/products-category/detail/${item._id}`} className="button-action">Chi tiết</a>
@@ -262,6 +266,9 @@ function ProductsCategory() {
                       <div className="products__status--inactive">Dừng hoạt động</div>
                     }
                   </div>
+                </td>
+                <td>{new Date(item.createdAt)?.toLocaleString('en-GB').split(",")[0]}
+                {new Date(item.createdAt)?.toLocaleString('en-GB').split(",")[1]}
                 </td>
                 <td className="products__action">
                   <a href={`/admin/products-category/detail/${item._id}`} className="button-action">Chi tiết</a>
