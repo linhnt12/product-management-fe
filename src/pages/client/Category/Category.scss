@@ -1,0 +1,26 @@
+.products {
+  &__brand {
+    display: flex;
+    margin-top: 20px;
+
+    &__item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 14px;
+      transition: all .3s ease;
+      cursor: pointer;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+
+      a {
+        color: black
+      }
+      
+    }
+
+    &__item:hover {
+      border: 1px solid #1ABA1A;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.product-detail {
+  &__image {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 55%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: 30px 30px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__price-new {
+    font-size: 25px;
+    font-weight: 600;
+    color:  #F1352B;
+    margin-bottom: 20px;
+  }
+
+  &__price-old {
+    font-size: 19px;
+    font-weight: 600;
+    color: #666666;
+    text-decoration: line-through;
+  }
+
+  &__percent {
+    align-items: center;
+    background-color: #EFD33D;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 3px 5px;
+    margin-left: 10px;
+  }
+
+  &__attr {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__stock {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 5px;
+    }
+
+    &--active {
+      background-color: #F3FBF3;
+      padding: 3px 5px;
+      color: #1ABA75;
+      font-weight: 600;
+    }
+
+    &--inactive {
+      background-color: #FEF5F4;
+      padding: 5px 5px;
+      color: #F1352B;
+      font-weight: 600;
+    }
+  }
+
+  &__addToCart {
+    padding: 30px 30px;
+  }
+
+  &__quantity {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+
+    .form-addCart {
+      display: flex;
+    }
+
+    input {
+      border: 0;
+      font-size: 17px;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+    }
+
+    span {
+      cursor: pointer;
+      margin: 0px 10px;
+      font-size: 25px;
+      font-weight: 700;
+      padding: 10px;
+    }
+  }
+}
+
+.description {
+  &__title {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    font-weight: 400;
+    text-align: justify;
+  }
+}
+
+.button {
+  padding: 15px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #1ABA1A;
+  background-color: #1ABA1A;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.button:hover {
+  background-color: white;
+  color: #1ABA1A;
+}

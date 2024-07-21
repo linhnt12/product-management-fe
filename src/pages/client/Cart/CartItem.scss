@@ -1,0 +1,121 @@
+.cart-item {
+  background-color: #FAFAFA;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  padding: 20px;
+  display: flex;
+  position: relative;
+
+  &__delete {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  &__image {
+    width: 30%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  &__price-new {
+    margin: 20px 0;
+    font-size: 19px;
+    font-weight: 600;
+    color:#FA2C2C
+  }
+
+  &__quantity {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    width: 100px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    input {
+      border: 0;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+    }
+
+    span {
+     cursor: pointer;
+     margin: 0px 10px;
+     font-size: 17px;
+     font-weight: 700;
+    }
+  }
+
+  &__stock {
+    display: flex;
+    align-items: center;
+    
+    p {
+      font-size: 12px;
+      padding: 10px 10px;
+      margin: 0;
+    }
+
+    &--active {
+      background-color: #F3FBF3;
+      padding: 3px 5px;
+      color: #1ABA75;
+      font-weight: 600;
+    }
+
+    &--inactive {
+      background-color: #FEF5F4;
+      padding: 5px 5px;
+      color: #F1352B;
+      font-weight: 600;
+    }
+  }
+}
+
+.cart-item:hover {
+  border-color: #ccc;
+}
+
+.button-delete {
+  cursor: pointer;
+  background-color: #F9E9E9;
+  border: 0px;
+  padding: 10px 12px;
+  color: #FA2C2C;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.button-delete:hover {
+  background-color: #FD6464;
+  color: white;
+}

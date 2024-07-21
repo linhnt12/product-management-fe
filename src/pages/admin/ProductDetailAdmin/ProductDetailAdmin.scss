@@ -1,0 +1,15 @@
+.product-admin__content {
+  font-size: 15px;
+  margin: 15px 0px;
+  text-align: justify;
+
+  &__status {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 15px;
+    margin-right: 5px;
+  }
+}

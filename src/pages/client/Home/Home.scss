@@ -1,0 +1,100 @@
+h2 {
+  color: black;
+  margin: 0 0 30px 0;
+  padding-left: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+
+  &__index {
+    font-size: 14px;
+    border: 1px solid transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &--active {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 1px solid #1ABA1A;
+    }
+  }
+
+  &__index:hover {
+    background-color: #ccc;
+  }
+
+  &__prev {
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+
+  &__prev:hover {
+    background-color: #ccc;
+  }
+
+  &__next {
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+
+  &__next:hover {
+    background-color: #ccc;
+  }
+}
+
+.products {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.sort {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+}
+
+.select-sort {
+  padding: 7px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
