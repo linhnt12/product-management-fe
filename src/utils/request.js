@@ -2,7 +2,7 @@ export const API_DOMAIN = "http://localhost:9000/api/v1/";
 
 export const get = async (path) => {
   const respone = await fetch(API_DOMAIN + path, {
-    withCredntials: true,
+    withCredentials: true,
     credentials: 'include'
   });
   const result = await respone.json();
